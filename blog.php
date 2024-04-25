@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 
 require_once 'function.php';
 
-
+$conn = connect();
 $navBar = navbar();
 $headerImage = generateBackgroundImage();
 $footer = footer();
@@ -35,6 +35,24 @@ $footer = footer();
 <body>
     <?php echo $navBar ?>
 
+    <?php 
+        $sql = "SELECT blogID, title, text FROM blogPosts";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while($row = $result->fetch_assoc()) {
+                echo "ID: " . $row["blogID"] . " - Name: " . $row["title"] . " " . "<br>";
+            }
+        } else {
+            echo "0 results";
+        }
+        
+        // Close connection
+        $conn->close();
+
+    ?>
+
     <section class="body-container">
 
         
@@ -63,40 +81,45 @@ $footer = footer();
             <div class="blog-card-text">
                 <h3 class="blog-card-title">blog piece</h3>
                 <!-- <p class="blog-card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi delectus alias praesentium. Exercitationem eum eaque ad, iste debitis at enim.</p> -->
+                <a href="#" class="button">Click Me!</a>
+                
             </div>
         </div>
-    
+        
         <div class="blog-card">
             <img src="photos/blogPhotos/jamesRobJen1.jpg" alt="" class="blog-image">
-    
+            
             <div class="blog-card-text">
                 <h3 class="blog-card-title">blog piece</h3>
+                <a href="#" class="button">Click Me!</a>
                 <!-- <p class="blog-card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi delectus alias praesentium. Exercitationem eum eaque ad, iste debitis at enim.</p> -->
             </div>
         </div>
-    
+        
         <div class="blog-card">
             <img src="photos/blogPhotos/jamesRobJen1.jpg" alt="" class="blog-image">
-    
+            
             <div class="blog-card-text">
                 <h3 class="blog-card-title">blog piece</h3>
+                <a href="#" class="button">Click Me!</a>
                 <!-- <p class="blog-card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi delectus alias praesentium. Exercitationem eum eaque ad, iste debitis at enim.</p> -->
             </div>
         </div>
-    
+        
         <div class="blog-card">
             <img src="photos/blogPhotos/jamesRobJen1.jpg" alt="" class="blog-image">
-    
+            
             <div class="blog-card-text">
                 <h3 class="blog-card-title">blog piece</h3>
+                <a href="#" class="button">Click Me!</a>
                 <!-- <p class="blog-card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi delectus alias praesentium. Exercitationem eum eaque ad, iste debitis at enim.</p> -->
             </div>
         </div>
-    
-    
-    
-        </section>
+        
+        
+        
     </section>
+</section>
 
 
     <?php echo $footer ?>

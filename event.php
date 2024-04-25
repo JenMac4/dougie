@@ -1,3 +1,13 @@
+<?php
+
+    require_once('function.php');
+
+    $navbar = navbar();
+    $headerImage = generateBackgroundImage();
+    $footer = footer();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,54 +15,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- RUBIK FONT STYLE SHEETS -->
+    
+    <!-- STYLE SHEETS FOR FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
-    <!-- SECONDARY FONT STYLE SHEETS -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-
-        <div class="header">
     
-            <div class="navbar">
-                <img src="photos/cleaner-dougie-logo.png" alt="Logo" class="logo">
-                <!-- <h3 class="header-logo">The Douglas Arms</h3> -->
-                <div class="nav-links" id="navLinks">
-                    <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
-                        <i class="fa fa-bars"></i> <!-- This uses Font Awesome for the hamburger icon -->
-                    </a>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact" id="final-nav-element">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-    
-        </div>
 
-    </header>
+    <?php echo $navbar ?>
 
 
     <!-- CONTENT CONTAINER -->
     
     <span class="body-container-events">
-        <div class="banner">
-            <!-- <div class="banner-text">The Dougie Arms</div> -->
-            <!-- <img src="photos/cleaner-dougie-logo.png" alt="" class="image-in-banner"> -->
-        </div>
+        <!-- <div class="banner"> -->
+        <!-- </div> -->
+
+        <?php echo $headerImage ?>
 
         <!-- CARD CONTAINER -->
 
@@ -115,7 +102,13 @@
 
     </span>
 
+    <div class="text-container-home">
+        </div>
+
+        <?php echo $footer; ?>
 
     
+    
+
 </body>
 </html>

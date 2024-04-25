@@ -4,6 +4,26 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 
+    function connect(){
+
+        //XAMPP LOGIN DETAILS
+        $HOSTNAME ='localhost';
+        $USERNAME = 'root';
+        $PASSWORD ='';
+        $EMAIL = 'test@jentesting.com';
+        $DATABASE = 'dougie';
+
+        // IS IT CON OR CONN
+        // It is CONN
+        $conn = new mysqli($HOSTNAME, $USERNAME, $PASSWORD, $DATABASE);
+
+        if($conn->connect_error){
+            die("connection error" . $conn->connect_error) ;
+        }
+
+        return $conn;
+    }
+
     function navbar(){
         $navbar='<header>
 
@@ -80,6 +100,6 @@ ini_set('display_errors', 1);
     </footer>';
 
     return $footer;
-}
+    }
     
 ?>
