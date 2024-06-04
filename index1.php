@@ -24,7 +24,7 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
@@ -80,7 +80,24 @@
 			<div class="img">
 				<img src="photos/blogPhotos/jamesRobJen.jpg" />
 			</div>
-	
+			<!-- <div class="img">
+				<img src="photos/blogPhotos/jamesRobJen.jpg" />
+			</div>
+			<div class="img">
+				<img src="photos/blogPhotos/devine.jpg" />
+			</div>
+			<div class="img">
+				<img src="photos/blogPhotos/jamesRobJen.jpg" />
+			</div> -->
+			<!-- <div class="img">
+				<img src="photos/blogPhotos/jamesRobJen.jpg" />
+			</div>
+			<div class="img">
+				<img src="photos/blogPhotos/devine.jpg" />
+			</div>
+			<div class="img">
+				<img src="photos/blogPhotos/jamesRobJen.jpg" />
+			</div> -->
 		</div>
     </div>
 

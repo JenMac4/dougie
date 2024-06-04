@@ -78,7 +78,9 @@ ini_set('display_errors', 1);
             break;
     }
 
-        $header='<div class="banner-' . $classSuffix . ' banner"></div>';
+        $header='<div class="banner-' . $classSuffix . ' banner">
+        <h1 class="banner-text">blog</h1>
+        </div>';
 
         return $header;
 

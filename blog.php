@@ -35,86 +35,60 @@ $footer = footer();
 <body>
     <?php echo $navBar ?>
 
-    <?php 
-        $sql = "SELECT blogID, title, text FROM blogPosts";
-        $result = $conn->query($sql);
-        
-        if ($result->num_rows > 0) {
-            // Output data of each row
-            while($row = $result->fetch_assoc()) {
-                echo "ID: " . $row["blogID"] . " - Name: " . $row["title"] . " " . "<br>";
-            }
-        } else {
-            echo "0 results";
-        }
-        
-        // Close connection
-        $conn->close();
-
-    ?>
+    
 
     <section class="body-container">
 
         
         
         <?php echo $headerImage ?>
+
+        <!-- <h1 class="banner-text">blog</h1> -->
         
         
         <h1 class="sub-title">Blog</h1>
 
         <section class="blog-grid">
     
-        <div class="main-article">
-            <img src="photos/blogPhotos/devine.jpg" alt="" class="blog-image">
-    
-            <div class="blog-card-text">
-                <h1 class="blog-card-title">Queens in the Douglas</h1>
-                <p class="blog-card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi delectus alias praesentium. Exercitationem eum eaque ad, iste debitis at enim.</p>
-            </div>
-        </div>
+        <?php
 
-        <!-- regulat cards -->
-    
-        <div class="blog-card">
-            <img src="photos/blogPhotos/jamesRobJen1.jpg" alt="" class="blog-image">
-    
-            <div class="blog-card-text">
-                <h3 class="blog-card-title">blog piece</h3>
-                <!-- <p class="blog-card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi delectus alias praesentium. Exercitationem eum eaque ad, iste debitis at enim.</p> -->
-                <a href="#" class="button">Click Me!</a>
-                
-            </div>
-        </div>
-        
-        <div class="blog-card">
-            <img src="photos/blogPhotos/jamesRobJen1.jpg" alt="" class="blog-image">
-            
-            <div class="blog-card-text">
-                <h3 class="blog-card-title">blog piece</h3>
-                <a href="#" class="button">Click Me!</a>
-                <!-- <p class="blog-card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi delectus alias praesentium. Exercitationem eum eaque ad, iste debitis at enim.</p> -->
-            </div>
-        </div>
-        
-        <div class="blog-card">
-            <img src="photos/blogPhotos/jamesRobJen1.jpg" alt="" class="blog-image">
-            
-            <div class="blog-card-text">
-                <h3 class="blog-card-title">blog piece</h3>
-                <a href="#" class="button">Click Me!</a>
-                <!-- <p class="blog-card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi delectus alias praesentium. Exercitationem eum eaque ad, iste debitis at enim.</p> -->
-            </div>
-        </div>
-        
-        <div class="blog-card">
-            <img src="photos/blogPhotos/jamesRobJen1.jpg" alt="" class="blog-image">
-            
-            <div class="blog-card-text">
-                <h3 class="blog-card-title">blog piece</h3>
-                <a href="#" class="button">Click Me!</a>
-                <!-- <p class="blog-card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi delectus alias praesentium. Exercitationem eum eaque ad, iste debitis at enim.</p> -->
-            </div>
-        </div>
+$sql = "SELECT blogID, title, text, photo FROM blogPosts";
+$result = $conn->query($sql);
+$first = true;
+
+if ($result->num_rows > 0) {
+    // Output data of each row
+    while($row = $result->fetch_assoc()) {
+        if ($first) {
+            echo '<div class="main-article">';
+            // echo '<img src="photos/blogPhotos/devine.jpg" alt="" class="blog-image">';
+            echo '<img src="' .htmlspecialchars($row["photo"]) . '" alt="" class="blog-image">'; 
+            echo '<div class="blog-card-text">';
+            echo '<h1 class="blog-card-title-main">' . htmlspecialchars($row["title"]) . '</h1>';
+            echo '<p class="blog-card-text">' . htmlspecialchars($row["text"]) . '</p>';
+            // why HAS THIS MADE ALL OF THE OTHER TITLES GO BLUE?
+            echo '<button class="read-more-button"><a href=blog-page.php?blogID=' . htmlspecialchars($row['blogID']) . '>readmore</a></button>';
+            echo '</div>';
+            echo '</div>';
+            $first = false;
+        } else {
+            echo '<div class="blog-card">';
+            // echo '<img src="photos/blogPhotos/default.jpg" alt="" class="blog-image">'; // Adjust or use a dynamic src if available
+            echo '<img src="' .htmlspecialchars($row["photo"]) . '" alt="" class="blog-image">'; // Adjust or use a dynamic src if available
+            echo '<div class="blog-card-text">';
+            echo '<h3 class="blog-card-title">' . htmlspecialchars($row["title"]) . '</h3>';
+            // echo '<p class="blog-card-text">' . htmlspecialchars($row["text"]) . '</p>';
+            echo '</div>';
+            echo '</div>';
+            }
+        }
+    } else {
+    echo '<p>No blog posts found.</p>';
+}
+// Close connection
+    $conn->close(); 
+
+        ?>
         
         
         

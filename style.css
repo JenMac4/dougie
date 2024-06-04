@@ -251,13 +251,14 @@ header{
 .banner, .banner-home {
     position: relative;
     width: 90%;
-    height: 400px; /* Adjust based on your preference */
+    height: 500px; /* Adjust based on your preference */
     /* background: url('photos/dougieStaff.jpg') no-repeat center center/cover; */
     /* filter: grayscale(100%); */
     background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* anchor-name: --banner-text-anchor; */
     
 }
 
@@ -294,6 +295,13 @@ header{
     text-align: center;
     font-family: var(--main-font);
     font-weight: 700;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* inset: anchor(--banner-text-anchor center); */
+    /* top: anchor(--banner-text-anchor center);
+    left: anchor(--banner-text-anchor center); */
+    translate: -50% -50%;
 }
 
 .text-container-home{
@@ -313,7 +321,8 @@ header{
     width: 27%;
     padding-right: 0; /* Ensure there's a starting point for the padding */
     transition: padding-right 0.3s ease, width 0.3s ease;
-    margin: 1.5em 0 0.75em;
+    /* margin: 1.5em 0 0.75em; */
+    margin-top: 0.5em;
     font-size: 1.5rem;
 }
 .sub-title:hover{
@@ -388,7 +397,7 @@ header{
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.9 );
+	/* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.9 ); */
 	border-radius: 2px;
 }
 .main .gallery .img:first-child{
@@ -685,8 +694,10 @@ header{
     flex-direction: column;
     align-items: start;
     justify-content: end;
-    height: 200px;
+    height: 125px;
 }
+
+/* I THINK THIS WAS MAYBE OLD BUTTON CODE FOR THE BLOG PAGE */
 
 .btn {
     display: inline-block;
@@ -824,8 +835,12 @@ footer {
     color: grey; /* Color change on hover */
 }
 
-.blog-card-title{
+.blog-card-title-main{
     /* font-size: 1.15em; */
+    margin: 0.5em 0;
+}
+.blog-card-title{
+    font-size: 1.25em;
     margin: 0.5em 0;
 }
 
@@ -838,11 +853,13 @@ footer {
     .footer-social {
         margin-top: 20px;
     }
+
+
 }
 
 
 /* MOBILE SCREENS */
-@media (max-width: 768px) {
+@media (max-width: 560px) {
     .blog-grid {
         grid-template-columns: repeat(2, 1fr); 
         grid-gap: 20px;
@@ -853,6 +870,20 @@ footer {
         margin-bottom: 30px;
         height: 400px;
     }
+
+    .main .gallery {
+        grid-template-columns: auto auto;
+        grid-gap: 0.5vh;
+    }
+
+    .banner{
+        height: 250px;
+    }
+
+    .sub-title{
+        width: 69%;
+    }
+    
 
 }
 
@@ -892,5 +923,35 @@ footer {
         width: 35%;
 
     }
+    
   }
+  
+
+  /* LARGE DESKTOP SCREEN */
+  @media screen and (min-width: 1450px) {
+    .header {
+        width: 80%;
+    }
+    .footer-content {
+        width: 80%;
+    }
+    .blog-grid {
+        width: 80%;
+    }
+    .text-container-home {
+        width: 80%;
+    }
+    .card-container {
+        width: 80%;
+    }
+
+    /* THIS ONE NEEDS CHECKED */
+    .long-card {
+        width: 80%;
+    }
+    .banner, .banner-home {
+        width: 80%;
+    }
+  }
+  
   
