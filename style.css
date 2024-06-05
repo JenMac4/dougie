@@ -711,6 +711,7 @@ header{
 
 .long-card{
     width: 90%;
+    display: grid;
 }
 
 .long-card > h2 {
@@ -760,6 +761,27 @@ header{
     flex-direction: column;
 }
 
+.read-more-button > a {
+    text-decoration: none;
+    color: inherit;
+}
+.read-more-button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--light-grey); /* Initial background color */
+    border: none;
+    color: var(--off-black);
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.read-more-button:hover{
+    background: linear-gradient(to right, var(--light-grey) 0%, var(--light-grey) 50%, var(--off-green) 50%, var(--off-green) 100%);
+    background-size: 200% 100%; /* Larger background size to cover the entire button */
+    transition: background-position 0.5s ease; /* Transition effect for background position */
+    background-position: right;
+}
+
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -796,6 +818,31 @@ header{
     z-index: 1; /* Ensures text stays on top of the pseudo-element */
     position: relative;
 }
+
+
+/* ///////////////////// */
+/* individual blog page */
+/* /////////////////// */
+
+.individual-blog-container{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    padding: 2.5em 0;
+}
+
+.blog-post-individual-content{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.blog-image-individual{
+    aspect-ratio: 1/1;
+    height: 350px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
 
 
 /* /////// */
@@ -942,6 +989,9 @@ footer {
         width: 80%;
     }
     .card-container {
+        width: 80%;
+    }
+    .individual-blog-container {
         width: 80%;
     }
 

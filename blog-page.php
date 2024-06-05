@@ -11,15 +11,16 @@
     $footer = footer();
 
     if(isset($_GET['blogID'])){
-        $blogID = 'blogID';
+        $blogID = $_GET['blogID'];
 
-        $blogID = securityChecksString($blogID);
-        $sql = 'SELECT * FROM `blogPosts` WHERE eventID = ?';
+        // if you want to use the below function you need to define it in function.php
+        // $blogID = securityChecksString($blogID);
+        $sql = 'SELECT * FROM `blogPosts` WHERE blogID = ?';
 
         //prepared statement to avoid injection via url
         //changed con to $conn
         $stmt = $conn->prepare($sql);
-        $stmt-> bind_param('i', $event_id);
+        $stmt-> bind_param('i', $blogID);
         $stmt-> execute();
         //I don't know if this is oop and I would really like to check that
         $result =$stmt->get_result();
@@ -33,11 +34,16 @@
         // we shouldn't need a loop because we only need to get one row
         //unless we decide that we want to display other blog posts?!
 
+        $row  = mysqli_fetch_assoc($result);
+        //make sure the above is correct
+
         $title = $row['title'];
         $textContent = $row['text'];
         $author = $row['author'];
         $photo = $row['photo'];
         $uploaded = $row['dateOfUpload'];
+
+
     }
 
 
@@ -65,6 +71,25 @@
 <body>
 
     <?php echo $navBar ?>
+
+    <span class="body-container">
+
+        <span class="individual-blog-container">
+    
+            <img src="<?php echo $photo ?>" alt="" class="blog-image-individual">
+    
+            <div class="blog-post-individual-content">
+                <h3 class="individual-blog-title"> <?php echo $title ?> </h3>
+                
+                <h6 class="individual-blog-info"> <?php echo $author . ' ' . $uploaded ?> </h3>
+                <!-- <h6 class="individual-blog-upload"> <?php echo $uploaded ?> </h6> -->
+                <p class="individual-blog-text"> <?php echo $textContent ?> </p>
+                
+            </div>
+        </span>
+
+
+    </span>
     
     <?php echo $footer ?>
 </body>
