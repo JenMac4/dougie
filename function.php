@@ -3,15 +3,18 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+require_once __DIR__ . '/vendor/autoload.php'; // Load Composer's autoloader
 
-    function connect(){
+// Load environment variables from .env file
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
-        //XAMPP LOGIN DETAILS
-        $HOSTNAME ='localhost';
-        $USERNAME = 'root';
-        $PASSWORD ='';
-        $EMAIL = 'test@jentesting.com';
-        $DATABASE = 'dougie';
+function connect() {
+    // Get the credentials from environment variables
+    $HOSTNAME = $_ENV['HOSTNAME'];
+    $USERNAME = $_ENV['USERNAME'];
+    $PASSWORD = $_ENV['PASSWORD'];
+    $DATABASE = $_ENV['DATABASE'];
 
         // IS IT CON OR CONN
         // It is CONN
@@ -79,12 +82,13 @@ ini_set('display_errors', 1);
     }
 
         $header='<div class="banner-' . $classSuffix . ' banner">
-        <h1 class="banner-text">blog</h1>
+            <h1 class="banner-text">blog</h1>
         </div>';
 
         return $header;
 
     }
+    
 
     function footer(){
         $footer='<footer>
@@ -95,7 +99,7 @@ ini_set('display_errors', 1);
                 Dumfries, DG1 2RQ</p>
             </div>
             <div class="footer-social">
-                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://facebook.com" target="_blank" class="facebook-logo"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>

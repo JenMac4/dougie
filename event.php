@@ -39,7 +39,10 @@
         <!-- <div class="banner"> -->
         <!-- </div> -->
 
-        <?php echo $headerImage ?>
+        <!-- <?php echo $headerImage ?> -->
+
+        <!-- <div class="banner"></div> -->
+        <h1 class="header-text header-text-event">EVENTS</h1>
 
         <!-- CARD CONTAINER -->
 
@@ -96,16 +99,18 @@
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quaerat eos, consequuntur quos nisi ullam? Illo magnam nobis dicta hic corporis mollitia modi assumenda, distinctio culpa dolor repudiandae nam architecto minima laudantium cupiditate dolore quia dignissimos, est provident, laboriosam blanditiis!</p>
 
-
+        
     </div>
     
+    <!-- SHOULD THIS BE IN THE DIV? -->
+    <button class="display-events-button"><a href="#">DJ Nights</a></button>
     <!-- FOLK NIGHT -->
     <div class="long-card">
         <h2 class="sub-title sub-title-event">Monday Folk Jam</h2>
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quaerat eos, consequuntur quos nisi ullam? Illo magnam nobis dicta hic corporis mollitia modi assumenda, distinctio culpa dolor repudiandae nam architecto minima laudantium cupiditate dolore quia dignissimos, est provident, laboriosam blanditiis!</p>
 
-
+        <img src="" alt="" class="event-img">
     </div>
 
     </span>

@@ -32,10 +32,7 @@
 
     <span class="body-container">
 
-        <!-- <div class="banner-home banner"></div> -->
-
-        <h1 class="header-text header-text-home">The   Dougie   Arms</h1>
-
+        <div class="banner-home banner"></div>
 
         <div class="text-container-home">
 
@@ -71,16 +68,16 @@
 			<div class="img">
 				<img src="photos/dougieStaff.jpg" />
 			</div>
-			<div class="img img-hide">
+			<div class="img">
 				<img src="photos/blogPhotos/devine.jpg" />
 			</div>
-			<div class="img img-hide">
+			<div class="img">
 				<img src="photos/ny.jpg" />
 			</div>
-			<div class="img img-hide">
+			<div class="img">
 				<img src="photos/blogPhotos/jamesRobJen.jpg" />
 			</div>
-			<div class="img img-hide">
+			<div class="img">
 				<img src="photos/blogPhotos/jamesRobJen.jpg" />
 			</div>
 	
@@ -97,13 +94,13 @@
     </div> -->
     
     <div class="week-days">
-      <div class="day monday">Monday<br>5 PM - 11 PM</div>
-      <div class="day tuesday">Tuesday<br>3 PM - 11 PM</div>
-      <div class="day wednesday">Wednesday<br>3 PM - 12 PM</div>
-      <div class="day thursday">Thursday<br>3 PM - 1 AM</div>
-      <div class="day friday">Friday<br>1 PM - 1 AM</div>
-      <div class="day saturday">Saturday<br>1 PM - 1 AM</div>
-      <div class="day sunday">Sunday<br>1 PM - 11 PM</div>
+      <div class="day">Monday<br>5 PM - 11 PM</div>
+      <div class="day">Tuesday<br>3 PM - 11 PM</div>
+      <div class="day">Wednesday<br>3 PM - 12 PM</div>
+      <div class="day">Thursday<br>3 PM - 1 AM</div>
+      <div class="day">Friday<br>1 PM - 1 AM</div>
+      <div class="day">Saturday<br>1 PM - 1 AM</div>
+      <div class="day">Sunday<br>1 PM - 11 PM</div>
     </div>
 
             <div class="location-reviews-section">
@@ -163,7 +160,5 @@
     
 
   <script src="script.js"></script>  
-  <script src="/dougie/assets/js/general.js"></script>
-
 </body>
 </html>

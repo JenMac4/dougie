@@ -41,12 +41,14 @@ $footer = footer();
 
         
         
-        <?php echo $headerImage ?>
+        <!-- <?php echo $headerImage ?> -->
+
+        <h1 class="header-text-blog header-text">BLOGS</h1>
 
         <!-- <h1 class="banner-text">blog</h1> -->
         
         
-        <h1 class="sub-title">Blog</h1>
+        <!-- <h1 class="sub-title">Blog</h1> -->
 
         <section class="blog-grid">
     
@@ -76,7 +78,7 @@ if ($result->num_rows > 0) {
             // echo '<img src="photos/blogPhotos/default.jpg" alt="" class="blog-image">'; // Adjust or use a dynamic src if available
             echo '<img src="' .htmlspecialchars($row["photo"]) . '" alt="" class="blog-image">'; // Adjust or use a dynamic src if available
             echo '<div class="blog-card-text">';
-            echo '<h3 class="blog-card-title">' . htmlspecialchars($row["title"]) . '</h3>';
+            echo '<h3 class="blog-card-title"><a href="blog-page.php?blogID=' . htmlspecialchars($row['blogID']) . '">' . htmlspecialchars($row["title"]) . '</a></h3>';
             // echo '<p class="blog-card-text">' . htmlspecialchars($row["text"]) . '</p>';
             echo '</div>';
             echo '</div>';
@@ -98,5 +100,6 @@ if ($result->num_rows > 0) {
 
     <?php echo $footer ?>
     
+    <script src="/dougie/assets/js/general.js"></script>
 </body>
 </html>

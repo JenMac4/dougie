@@ -20,7 +20,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
+    /* margin-top: 0; */
     line-height: 1.25;
 }
 
@@ -225,6 +225,36 @@ header{
   
   /* HOME PAGE  */
 
+  .header-text{
+    margin: 120px 0;
+    font-size: 15vw;
+    /* background-image: url('photos/headerPhotos/dj-decks.jpg'); */
+    background-size: contain;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    /* letter-spacing: .1em; */
+    /* width: 100%; */
+  }
+
+  .header-text-blog{
+    background-image: url('photos/headerPhotos/dougie_bar.JPG');
+  }
+
+  .header-text-event{
+    background-image: url('photos/headerPhotos/dj-decks.jpg');
+  }
+  
+  .header-text-home{
+    font-size: 10vw;
+
+    background-image: url('photos/headerPhotos/genericPub1.jpg');
+    /* text-shadow: 20px 20px 0 var(--off-black); */
+
+    
+  }
+
   .banner-home::before, .banner-home::after {
     content: "";
     position: absolute;
@@ -291,7 +321,7 @@ header{
 
 .banner-text {
     color: #fff;
-    font-size: 2em; /* Adjust based on your preference */
+    font-size: 5em; 
     text-align: center;
     font-family: var(--main-font);
     font-weight: 700;
@@ -302,6 +332,10 @@ header{
     /* top: anchor(--banner-text-anchor center);
     left: anchor(--banner-text-anchor center); */
     translate: -50% -50%;
+    /* SEE VIDEO FOR TRICK: https://www.youtube.com/watch?v=9Kr3T4Ndl-o */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .text-container-home{
@@ -333,7 +367,7 @@ header{
 .site-text{
     margin: 0;
     /* margin-bottom: 2em; */
-    padding-bottom: .5em;
+    padding-bottom: 2em;
     border-bottom: 2px solid var(--light-grey);
 }
 
@@ -422,48 +456,12 @@ header{
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
-	filter: brightness(0.5) grayscale(100);
+	/* filter: brightness(0.5) grayscale(100); */
 	border-radius: 2px;
 	transition: 0.3s ease-in-out;
 }
 .main .gallery .img:hover img{
 	filter: brightness(1) grayscale(0);
-}
-
-@media only screen and (max-width: 768px){
-	.main h1{
-		font-size: 1.8em;
-		width: 400px;
-	}
-	.main p{
-		font-size: 1.2em;
-	}
-	.main .gallery{
-		display: grid;
-		grid-template-columns: auto auto auto;
-	}
-}
-@media only screen and (max-width: 430px){
-	.main h1{
-		font-size: 1.2em;
-		width: 300px;
-	}
-	.main p{
-		font-size: 0.89em;
-	}
-	.main .gallery{
-		display: block;
-	}
-	.main .gallery .img{
-		display: block;
-		width: 100%;
-		height: 100%;
-		margin:2% 0;
-	}
-	.main .gallery .img img{
-		display: block;
-		filter: brightness(1) grayscale(0);
-	}
 }
 
 
@@ -564,6 +562,7 @@ header{
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 1.5em;
   }
   
   .day {
@@ -761,11 +760,12 @@ header{
     flex-direction: column;
 }
 
-.read-more-button > a {
+.read-more-button > a,
+.display-events-button > a {
     text-decoration: none;
     color: inherit;
 }
-.read-more-button{
+.read-more-button, .display-events-button{
     padding: 10px 20px;
     font-size: 16px;
     background-color: var(--light-grey); /* Initial background color */
@@ -775,7 +775,8 @@ header{
     transition: background-color 0.5s ease;
 }
 
-.read-more-button:hover{
+.read-more-button:hover,
+.display-events-button:hover {
     background: linear-gradient(to right, var(--light-grey) 0%, var(--light-grey) 50%, var(--off-green) 50%, var(--off-green) 100%);
     background-size: 200% 100%; /* Larger background size to cover the entire button */
     transition: background-position 0.5s ease; /* Transition effect for background position */
@@ -819,6 +820,35 @@ header{
     position: relative;
 }
 
+.blog-card-title a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent element */
+  }
+
+.blog-card-title-main{
+    /* font-size: 1.15em; */
+    margin: 0.5em 0;
+}
+.blog-card-title{
+    font-size: 1.25em;
+    margin: 0.5em 0;
+    border-bottom: 2px solid transparent; /* Add transparent border bottom */
+    transition: border-bottom 0.5s ease;
+    display: inline-block;
+    /* text-decoration: none;
+
+    background-image: linear-gradient(90deg, var(--off-black), var(--off-white));
+    background-size: 0% 3px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 300ms ease; */
+}
+
+.blog-card-title:hover {
+    border-bottom: 2px solid var(--off-black); 
+    /* background-size: 100% 3px; */
+
+  }
 
 /* ///////////////////// */
 /* individual blog page */
@@ -840,7 +870,28 @@ header{
 .blog-image-individual{
     aspect-ratio: 1/1;
     height: 350px;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    /* clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); */
+
+    --g: 4px;     /* the gap */
+    --b: 6px;    /* border thickness*/
+    --c: var(--off-green); /* the color */
+
+    padding: calc(var(--g) + var(--b));
+    --_c: #0000 0 25%, var(--c) 0 50%;
+    --_g1: repeating-linear-gradient(90deg ,var(--_c)) repeat-x;
+    --_g2: repeating-linear-gradient(180deg,var(--_c)) repeat-y;
+    background:
+        var(--_g1) var(--_p, 25%) 0   ,var(--_g2) 0    var(--_p,125%),
+        var(--_g1) var(--_p,125%) 100%,var(--_g2) 100% var(--_p, 25%);
+    background-size: 200% var(--b),var(--b) 200%;
+    cursor: pointer;
+    transition: .3s;
+    object-fit: cover;
+
+}
+
+.blog-image-individual:hover {
+    --_p: 75%;
 }
 
 
@@ -882,14 +933,6 @@ footer {
     color: grey; /* Color change on hover */
 }
 
-.blog-card-title-main{
-    /* font-size: 1.15em; */
-    margin: 0.5em 0;
-}
-.blog-card-title{
-    font-size: 1.25em;
-    margin: 0.5em 0;
-}
 
 /* Ensures the content stacks on smaller screens */
 
@@ -901,7 +944,9 @@ footer {
         margin-top: 20px;
     }
 
-
+    .footer-social > .facebook-logo{
+        margin-left: 0;
+    }
 }
 
 
@@ -928,9 +973,21 @@ footer {
     }
 
     .sub-title{
-        width: 69%;
+        width: 100%;
     }
     
+    .footer-social > .facebook-logo{
+        margin-left: 0;
+    }
+
+    .img-hide{
+        display: none;
+    }
+
+    /* check the below code is appropriate for tablets */
+    .day {
+        display: none;
+    }
 
 }
 
@@ -945,6 +1002,10 @@ footer {
     .sub-title{
         width: 35%;
 
+    }
+
+    .img-hide{
+        display: none;
     }
   }
   
@@ -1004,4 +1065,142 @@ footer {
     }
   }
   
+
+@media only screen and (max-width: 768px){
+	.main h1{
+		font-size: 1.8em;
+		width: 400px;
+	}
+	.main p{
+		font-size: 1.2em;
+	}
+	.main .gallery{
+		display: grid;
+		grid-template-columns: auto auto auto;
+	}
+}
+@media only screen and (max-width: 430px){
+
+    .gallery .img {
+        display: none; /* Hide all images on small screens */
+    }
+
+    .gallery .img:first-child {
+        display: block; /* Show only the first image */
+        position: relative;
+    }
+
+    /* Overlay text for "Photo Gallery" */
+    .gallery .img:first-child::after {
+        content: 'Photo Gallery';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex; /* Flexbox to center text */
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        padding: 10px;
+        cursor: pointer; /* Show that it's clickable */
+    }
+
+    .gallery .img:first-child {
+        cursor: pointer;
+    }
+
+    /* Lightbox style remains the same */
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    .lightbox .close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    .lightbox .prev,
+    .lightbox .next {
+        position: absolute;
+        top: 50%;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .lightbox .prev {
+        left: 20px;
+    }
+
+    .lightbox .next {
+        right: 20px;
+    }
+
+    /* EVENT PAGE */
+
+    .card-container{
+        display: none;
+    }
+
+ /* other stuff */
+	.text-container-home{
+        text-align: center;
+        margin: auto 0;
+    }
+
+    .sub-title{
+        width: 100%;
+        text-align: center;
+        border: none;
+    }
+    
+    .main h1{
+		font-size: 1.2em;
+		width: 300px;
+	}
+	.main p{
+		font-size: 0.89em;
+	}
+	.main .gallery{
+		display: block;
+	}
+	.main .gallery .img{
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin:2% 0;
+	}
+	.main .gallery .img img{
+		display: block;
+		filter: brightness(1) grayscale(0);
+	}
+}
+
+@media only screen and (min-width: 431px) {
+    .prev, .next, .close, .display-events-button {
+        display: none !important; /* Hide the prev and next buttons on larger screens */
+    }
+}
+
   
