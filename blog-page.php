@@ -92,5 +92,7 @@
     </span>
     
     <?php echo $footer ?>
+    <script src="/dougie/assets/js/general.js"></script>
+
 </body>
 </html>

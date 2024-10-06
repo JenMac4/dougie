@@ -162,7 +162,7 @@
 <?php echo $footer ?>
     
 
-  <script src="script.js"></script>  
+  <!-- <script src="script.js"></script>   -->
   <script src="/dougie/assets/js/general.js"></script>
 
 </body>
